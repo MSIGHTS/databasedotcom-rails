@@ -5,7 +5,7 @@ module Databasedotcom
         def dbdc_client
           unless @dbdc_client
             
-            unless ENV['RAILS_ENV'].nil?
+            unless ENV['RAILS_ENV'].nil? or ENV['RAILS_ENV']==''
               file_name = ENV['RAILS_ENV'] + '.yml'
               file = File.join(::Rails.root, 'config', 'databasedotcom', file_name)
             else
